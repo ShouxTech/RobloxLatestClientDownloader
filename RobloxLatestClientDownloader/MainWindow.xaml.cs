@@ -22,22 +22,22 @@ namespace RobloxLatestClientDownloader {
     public partial class MainWindow : Window {
         private const string robloxClientName = "RobloxPlayerBeta.exe";
 
-        private string latestRobloxVersion;
+        private string currentRobloxVersion;
         private string availableRobloxVersion;
 
         public MainWindow() {
             InitializeComponent();
 
-            latestRobloxVersion = GetLatestRobloxVersion();
+            currentRobloxVersion = GetCurrentRobloxVersion();
             availableRobloxVersion = GetAvailableRobloxVersion();
 
             SetLatestVersionLabel();
             SetAvailableVersionLabel();
         }
 
-        private string GetLatestRobloxVersion() {
-            if (!string.IsNullOrEmpty(latestRobloxVersion)) {
-                return latestRobloxVersion;
+        private string GetCurrentRobloxVersion() {
+            if (!string.IsNullOrEmpty(currentRobloxVersion)) {
+                return currentRobloxVersion;
             }
 
             using (HttpClient client = new HttpClient()) {
@@ -70,7 +70,7 @@ namespace RobloxLatestClientDownloader {
         }
 
         private void SetLatestVersionLabel() {
-            CurrentVersionLabel.Content = "Current Roblox Version: " + latestRobloxVersion;
+            CurrentVersionLabel.Content = "Current Roblox Version: " + currentRobloxVersion;
         }
 
         private void SetAvailableVersionLabel() {
@@ -100,7 +100,7 @@ namespace RobloxLatestClientDownloader {
             using (ZipArchive archive = ZipFile.OpenRead(zipPath)) {
                 foreach (ZipArchiveEntry entry in archive.Entries) {
                     if (entry.Name == robloxClientName) {
-                        entry.ExtractToFile(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Roblox\Versions\" + latestRobloxVersion + "\\" + entry.Name, true);
+                        entry.ExtractToFile(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Roblox\Versions\" + currentRobloxVersion + "\\" + entry.Name, true);
 
                         MessageBox.Show("Replaced the current version of Roblox with the latest available version.", "Replaced", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
