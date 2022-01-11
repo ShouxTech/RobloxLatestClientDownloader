@@ -4,7 +4,7 @@ This application downloads the latest available release of the Roblox client. Th
 
 [Video](https://streamable.com/k9opp5)
 
-![UI Image](https://i.gyazo.com/b8d7775e25f1e0865758640c9f14c4a5.png)
+![UI Image](https://i.gyazo.com/991bb90e9584cf5d32c931b3c4900572.png)
 
 ## How does it work?
 
