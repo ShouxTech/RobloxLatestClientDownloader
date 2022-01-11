@@ -1,0 +1,25 @@
+﻿<Window x:Class="RobloxLatestClientDownloader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RobloxLatestClientDownloader"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        SizeToContent="Height"
+        Icon="/ClientDownloadLogo.png"
+        Title="Roblox Latest Client Downloader" Height="135" Width="355">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="CurrentVersionLabel" HorizontalContentAlignment="Center">Current Roblox Version:</Label>
+        <Label x:Name="AvailableVersionLabel" Grid.Row="1" HorizontalContentAlignment="Center">Available Roblox Version:</Label>
+        <Button x:Name = "DownloadAvailableBtn" Grid.Row="2" Height="25" Margin="0 3 0 0" Click="DownloadAvailableBtn_Click">Download Available Version</Button>
+        <Button x:Name="ReplaceVersionBtn" Grid.Row="3" Height="25" Margin="0 4 0 0" Click="ReplaceVersionBtn_Click">Replace Current With Available Version</Button>
+    </Grid>
+</Window>
