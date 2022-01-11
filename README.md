@@ -8,4 +8,4 @@ This application downloads the latest available release of the Roblox client. Th
 
 ## How does it work?
 
-Roblox has their deploy logs [here](http://setup.roblox.com/DeployHistory.txt). This application checks for the latest WindowsPlayer version and allows you to download it or replace it directly into your Roblox versions folder (Only works if you have Roblox installed in local appdata)
+Roblox has their deploy logs [here](http://setup.roblox.com/DeployHistory.txt). This application checks for the latest WindowsPlayer version and allows you to download it or replace it directly into your Roblox versions folder (Only works if you have Roblox installed in local appdata, but if you have Roblox installed somewhere else, you can still download the zip and put the Roblox client executable into your Roblox/Versions/version-xxx directory)
